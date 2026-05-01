@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Common Gathering • Simple Church Connection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .hero-bg { background: linear-gradient(135deg, #264653 0%, #2A9D8F 100%); }
+    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <div class="flex items-center gap-x-2">
+          <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
+          <span class="text-2xl font-light text-gray-400">|</span>
+          <span class="text-2xl font-semibold tracking-tight">Common Gathering</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-x-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-[#2A9D8F] transition font-medium">Home</a>
+        <a href="about.html" class="hover:text-[#2A9D8F] transition">About Us</a>
+        <a href="#pricing" class="hover:text-[#2A9D8F] transition">Pricing</a>
+        <a href="how-to-videos.html" class="hover:text-[#2A9D8F] transition">How-To Videos</a>
+        <a href="faq.html" class="hover:text-[#2A9D8F] transition">FAQ</a>
+      </div>
+      <div class="flex items-center gap-x-3">
+        <a onclick="showDemo()" class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-2xl hover:bg-[#2A9D8F] hover:text-white transition">
+          Watch Demo
+        </a>
+        <a href="#download" class="px-6 py-2.5 bg-[#2A9D8F] text-white rounded-2xl flex items-center gap-x-2 hover:bg-[#264653] transition">
+          <i class="fab fa-apple"></i>
+          <i class="fab fa-google-play"></i>
+          <span class="text-sm font-medium">Download App</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg text-white py-24">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-x-2 bg-white/10 text-white text-sm font-medium px-6 py-2 rounded-3xl mb-6 backdrop-blur-sm">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E9C46A] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-[#E9C46A]"></span>
+        </span>
+        No more digital Babel
+      </div>
+      <h1 class="text-6xl md:text-7xl font-semibold leading-none tracking-tighter mb-6">
+        The simplest way<br>your church stays together.
+      </h1>
+      <p class="text-2xl text-white/90 max-w-2xl mx-auto mb-10">
+        Minimalist. Distraction-free. Built for pastors who want real connection — not another noisy group chat.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#pricing" class="px-10 py-5 bg-[#E9C46A] hover:bg-white text-[#264653] font-semibold text-lg rounded-3xl transition flex items-center gap-x-3">
+          Get started for $65/mo
+          <span class="text-2xl">→</span>
+        </a>
+        <a onclick="showDemo()" class="px-10 py-5 border-2 border-white/80 hover:border-white text-white font-medium text-lg rounded-3xl transition">
+          Watch Demo
+        </a>
+      </div>
+      <p class="text-white/70 mt-8 text-sm">Don’t be a doubting Thomas — your congregation is already waiting.</p>
+    </div>
+  </section>
+
+  <!-- WHY COMMON GATHERING -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="text-[#2A9D8F] font-medium tracking-widest">WHY COMMON GATHERING</span>
+        <h2 class="text-5xl font-semibold mt-3">Built for connection, not distraction.</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
+          Less noise, more togetherness. We created a peaceful digital space so your church can stay close — 
+          without the chaos of endless group chats and social media feeds.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group">
+          <div class="h-1.5 w-12 bg-[#2A9D8F] rounded mb-6 group-hover:w-16 transition-all"></div>
+          <h3 class="text-2xl font-semibold mb-3">Built for churches,<br>not clicks</h3>
+          <p class="text-gray-600">No algorithms fighting for attention. Just a clean space that helps your community actually connect.</p>
+        </div>
+        <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group">
+          <div class="h-1.5 w-12 bg-[#E9C46A] rounded mb-6 group-hover:w-16 transition-all"></div>
+          <h3 class="text-2xl font-semibold mb-3">Distraction-free space</h3>
+          <p class="text-gray-600">A calm digital home where the focus stays on people and faith — not endless scrolling or notifications.</p>
+        </div>
+        <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group">
+          <div class="h-1.5 w-12 bg-[#F4A261] rounded mb-6 group-hover:w-16 transition-all"></div>
+          <h3 class="text-2xl font-semibold mb-3">Everything in one place</h3>
+          <p class="text-gray-600">Announcements, events, groups, prayer requests, and resources — all together. No more jumping between apps and chats.</p>
+        </div>
+        <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition group">
+          <div class="h-1.5 w-12 bg-[#E76F51] rounded mb-6 group-hover:w-16 transition-all"></div>
+          <h3 class="text-2xl font-semibold mb-3">Safe and private by design</h3>
+          <p class="text-gray-600">Your church’s conversations and data stay yours. Built for trust, never for selling or sharing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR PASTORS & LEADERS -->
+  <section id="leaders" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="px-4 py-1 bg-[#2A9D8F]/10 text-[#2A9D8F] rounded-3xl text-sm font-medium">Built first for you, Pastor</span>
+        <h2 class="text-5xl font-semibold mt-4">Less apps. More shepherding.</h2>
+        <p class="text-xl text-gray-600 mt-3 max-w-xl mx-auto">One peaceful place instead of 17 chaotic threads.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="fade-in bg-white border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition">
+          <div class="w-12 h-12 bg-[#2A9D8F] text-white rounded-2xl flex items-center justify-center text-2xl mb-6">📢</div>
+          <h3 class="text-2xl font-semibold mb-2">Home Feed & Announcements</h3>
+          <p class="text-gray-600">Post updates once. Everyone sees them. No more “Did you see the email?”</p>
+        </div>
+        <div class="fade-in bg-white border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition">
+          <div class="w-12 h-12 bg-[#E9C46A] text-[#264653] rounded-2xl flex items-center justify-center text-2xl mb-6">📅</div>
+          <h3 class="text-2xl font-semibold mb-2">Events & Scheduling</h3>
+          <p class="text-gray-600">Create events. Members RSVP. Zero confusion.</p>
+        </div>
+        <div class="fade-in bg-white border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition">
+          <div class="w-12 h-12 bg-[#F4A261] text-white rounded-2xl flex items-center justify-center text-2xl mb-6">🙏</div>
+          <h3 class="text-2xl font-semibold mb-2">Prayer Requests + Groups</h3>
+          <p class="text-gray-600">Private ministries, teams, and prayer chains — all in one safe place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES FOR CONGREGATION -->
+  <section id="features" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-5xl font-semibold">For your people too</h2>
+        <p class="text-xl text-gray-600 mt-3">They just open the app and feel connected — no learning curve.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-3xl p-8 text-center">📲 Clean chronological feed</div>
+        <div class="bg-gray-50 rounded-3xl p-8 text-center">📍 Event calendar & RSVPs</div>
+        <div class="bg-gray-50 rounded-3xl p-8 text-center">👥 Join any ministry group</div>
+        <div class="bg-gray-50 rounded-3xl p-8 text-center">🙏 Submit & see prayer requests</div>
+        <div class="bg-gray-50 rounded-3xl p-8 text-center">📖 Sermons, devotionals & resources</div>
+        <div class="bg-gray-50 rounded-3xl p-8 text-center">🔒 Private & safe by design</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW CHURCHES ARE USING IT -->
+  <section id="how-used" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-5xl font-semibold">Real ways churches are gathering today</h2>
+        <p class="text-[#E76F51] font-medium mt-2">No hype. Just everyday ministry made simple.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="border border-gray-100 rounded-3xl p-8 hover:border-[#2A9D8F] transition">
+          <strong class="text-[#2A9D8F]">Small Groups</strong><br>Coordinate meetings and stay connected with shared calendars and messaging.
+        </div>
+        <div class="border border-gray-100 rounded-3xl p-8 hover:border-[#2A9D8F] transition">
+          <strong class="text-[#2A9D8F]">Prayer Teams</strong><br>Receive and respond to prayer requests instantly, building a culture of care.
+        </div>
+        <div class="border border-gray-100 rounded-3xl p-8 hover:border-[#2A9D8F] transition">
+          <strong class="text-[#2A9D8F]">Worship & Media Teams</strong><br>Organize schedules and share resources without endless text threads.
+        </div>
+        <div class="border border-gray-100 rounded-3xl p-8 hover:border-[#2A9D8F] transition">
+          <strong class="text-[#2A9D8F]">Outreach Teams</strong><br>Plan events and communicate needs clearly to your volunteer community.
+        </div>
+        <div class="border border-gray-100 rounded-3xl p-8 hover:border-[#2A9D8F] transition">
+          <strong class="text-[#2A9D8F]">Youth & Ministries</strong><br>Create safe, engaging spaces for youth to connect and grow.
+        </div>
+        <div class="border border-gray-100 rounded-3xl p-8 hover:border-[#2A9D8F] transition">
+          <strong class="text-[#2A9D8F]">Members & Families</strong><br>Discover events, join groups, and build real community all week long.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-STEP SIGN-UP PROCESS -->
+  <section id="process" class="py-20 bg-[#264653] text-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-semibold mb-4">Three clicks and your church is connected</h2>
+      <p class="text-white/70 mb-16">Download → Sign up with your church → Share the link. Done.</p>
+      
+      <div class="flex flex-col md:flex-row justify-center items-center gap-12">
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto bg-white/10 rounded-3xl flex items-center justify-center text-5xl mb-6">📲</div>
+          <h4 class="font-semibold text-xl">1. Download</h4>
+          <p class="text-white/60">App Store or Google Play</p>
+        </div>
+        <div class="text-4xl hidden md:block text-[#E9C46A]">→</div>
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto bg-white/10 rounded-3xl flex items-center justify-center text-5xl mb-6">🙋</div>
+          <h4 class="font-semibold text-xl">2. Join your church</h4>
+          <p class="text-white/60">One-time quick setup</p>
+        </div>
+        <div class="text-4xl hidden md:block text-[#E9C46A]">→</div>
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto bg-white/10 rounded-3xl flex items-center justify-center text-5xl mb-6">🔗</div>
+          <h4 class="font-semibold text-xl">3. Share the link</h4>
+          <p class="text-white/60">Invite the whole flock</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-center text-5xl font-semibold mb-12">What pastors are saying</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-3xl p-8">
+          <p class="italic">"Finally an app that feels like church — peaceful, simple, and actually useful. My people love it."</p>
+          <div class="mt-8 flex items-center gap-x-4">
+            <div class="w-10 h-10 bg-[#2A9D8F] rounded-2xl"></div>
+            <div>
+              <div class="font-semibold">Pastor Rachel Kim</div>
+              <div class="text-sm text-gray-500">Hope Church • 340 members</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-3xl p-8">
+          <p class="italic">"We replaced 6 different tools with one. Prayer requests actually get answered now."</p>
+          <div class="mt-8 flex items-center gap-x-4">
+            <div class="w-10 h-10 bg-[#E9C46A] rounded-2xl"></div>
+            <div>
+              <div class="font-semibold">Pastor David Morales</div>
+              <div class="text-sm text-gray-500">Grace Community • 180 members</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-3xl p-8">
+          <p class="italic">"The cleanest church app I’ve ever seen. My youth group is more engaged than ever."</p>
+          <div class="mt-8 flex items-center gap-x-4">
+            <div class="w-10 h-10 bg-[#F4A261] rounded-2xl"></div>
+            <div>
+              <div class="font-semibold">Pastor Marcus Thompson</div>
+              <div class="text-sm text-gray-500">New Life Church • 520 members</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-5xl font-semibold">Simple pricing. Eternal value.</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white border border-gray-200 rounded-3xl p-8 flex flex-col">
+          <h3 class="text-2xl font-semibold">Monthly</h3>
+          <div class="mt-auto">
+            <div class="text-7xl font-semibold text-[#2A9D8F]">$65</div>
+            <div class="text-gray-500">per month • billed monthly</div>
+          </div>
+          <a href="#" class="mt-10 block text-center py-4 bg-[#2A9D8F] text-white rounded-3xl font-medium">Choose monthly</a>
+        </div>
+        
+        <div class="bg-[#264653] text-white rounded-3xl p-8 flex flex-col relative scale-110 shadow-2xl">
+          <div class="absolute -top-3 right-8 bg-[#E9C46A] text-[#264653] text-xs font-bold px-4 py-1 rounded-3xl">SAVE 10%</div>
+          <h3 class="text-2xl font-semibold">Annual</h3>
+          <div class="mt-auto">
+            <div class="text-7xl font-semibold">$702</div>
+            <div class="opacity-70">per year • billed annually ($58.50/mo)</div>
+          </div>
+          <a href="#" class="mt-10 block text-center py-4 bg-[#E9C46A] text-[#264653] rounded-3xl font-medium">Choose annual & save</a>
+        </div>
+        
+        <div class="bg-white border border-gray-200 rounded-3xl p-8 flex flex-col">
+          <h3 class="text-2xl font-semibold">White Label</h3>
+          <p class="text-gray-600 mt-4">Custom branding, your logo, your colors, your domain. Perfect for networks & large churches.</p>
+          <div class="mt-auto pt-8">
+            <a href="#contact" class="block text-center py-4 border-2 border-[#2A9D8F] text-[#2A9D8F] rounded-3xl font-medium">Contact us for details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW-TO VIDEO LIBRARY TEASER -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-semibold mb-4">How-To Video Library</h2>
+      <p class="max-w-md mx-auto text-gray-600 mb-8">Step-by-step walkthroughs for every single feature. New videos added weekly.</p>
+      <a href="how-to-videos.html" class="inline-flex items-center gap-x-3 bg-[#2A9D8F] text-white px-8 py-4 rounded-3xl text-lg font-medium">
+        Browse the full video library →
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 bg-[#264653] text-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-5xl font-semibold text-center mb-8">Contact Us</h2>
+      <p class="text-center text-white/80 mb-10 text-lg">
+        Have questions? Want a live demo? Interested in white-label?<br>
+        We'd love to hear from you.
+      </p>
+
+      <form action="https://formsubmit.co/commongatheringapp@gmail.com" method="POST" class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <input type="text" name="name" placeholder="Your name" required class="bg-white/10 border border-white/30 rounded-3xl px-6 py-5 text-white placeholder:text-white/50 focus:outline-none">
+          <input type="email" name="email" placeholder="Church email" required class="bg-white/10 border border-white/30 rounded-3xl px-6 py-5 text-white placeholder:text-white/50 focus:outline-none">
+        </div>
+        <textarea name="message" placeholder="Tell us about your church or how we can help..." rows="5" required class="bg-white/10 border border-white/30 rounded-3xl px-6 py-5 text-white placeholder:text-white/50 w-full focus:outline-none"></textarea>
+
+        <input type="hidden" name="_subject" value="New Contact Form Submission - Common Gathering">
+        <input type="hidden" name="_captcha" value="false">
+
+        <button type="submit" class="w-full py-5 bg-[#E9C46A] text-[#264653] font-semibold text-xl rounded-3xl hover:bg-white transition">
+          Send Message
+        </button>
+      </form>
+
+      <p class="text-center text-white/60 text-sm mt-8">Or just email us at <strong>commongatheringapp@gmail.com</strong></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white/70 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-x-2 mb-4">
+            <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
+            <span class="text-2xl font-light text-gray-400">|</span>
+            <span class="text-2xl font-semibold tracking-tight text-white">Common Gathering</span>
+          </div>
+          <p class="text-sm max-w-md">A simple, peaceful digital space helping churches stay connected all week long — built on the heart of Acts 2:44.</p>
+          <div class="mt-6 text-sm">
+            Email: <a href="mailto:commongatheringapp@gmail.com" class="hover:text-white">commongatheringapp@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+          <div class="space-y-2 text-sm">
+            <a href="about.html" class="block hover:text-white">About Us</a>
+            <a href="how-to-videos.html" class="block hover:text-white">How-To Videos</a>
+            <a href="faq.html" class="block hover:text-white">FAQ</a>
+          </div>
+        </div>
+
+        <div class="md:col-span-4">
+          <h4 class="font-semibold text-white mb-4">Legal</h4>
+          <div class="space-y-2 text-sm">
+            <a href="privacy.html" class="block hover:text-white">Privacy Policy</a>
+            <a href="terms.html" class="block hover:text-white">Terms & Conditions</a>
+            <a href="safety-guidelines.html" class="block hover:text-white">Safety Guidelines</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex gap-x-6 text-2xl">
+          <a href="https://www.facebook.com/profile.php?id=61560216537888" target="_blank" rel="noopener noreferrer" class="hover:text-[#2A9D8F] transition"><i class="fab fa-facebook"></i></a>
+          <a href="https://youtube.com/@commongatheringapp" target="_blank" rel="noopener noreferrer" class="hover:text-[#2A9D8F] transition"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="text-sm text-center md:text-right">
+          © 2026 Common Gathering • All Rights Reserved<br>
+          Made with ❤️ for the Church
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Demo Modal -->
+  <div id="demoModal" onclick="if(event.target===this)hideDemo()" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]">
+    <div class="bg-white text-gray-900 rounded-3xl max-w-3xl w-full mx-4 p-8">
+      <h3 class="text-3xl font-semibold mb-4">Watch Demo</h3>
+      <p class="mb-6 text-gray-600">See how Common Gathering brings your church together in one simple, peaceful place.</p>
+      
+      <video width="100%" height="auto" controls autoplay muted playsinline class="rounded-2xl">
+        <source src="demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <button onclick="hideDemo()" class="mt-8 w-full py-4 text-[#2A9D8F] border border-[#2A9D8F] rounded-3xl font-medium">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function showDemo() {
+      document.getElementById('demoModal').classList.remove('hidden');
+      document.getElementById('demoModal').classList.add('flex');
+    }
+    
+    function hideDemo() {
+      const modal = document.getElementById('demoModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    
+    // Fade-in on scroll
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.fade-in').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) el.classList.add('visible');
+      });
+    });
+    
+    // Form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      // Form will submit via Formsubmit.co - no extra JS needed
+    });
+  </script>
+</body>
+</html>
