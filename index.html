@@ -380,14 +380,13 @@
     </div>
   </footer>
 
-  <!-- Demo Modal - Smaller Height -->
+   <!-- Demo Modal - Video stops when closed -->
   <div id="demoModal" onclick="if(event.target===this)hideDemo()" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]">
     <div class="bg-white text-gray-900 rounded-3xl max-w-xl w-full mx-4 p-6">
       <h3 class="text-3xl font-semibold mb-4">Watch Demo</h3>
       <p class="mb-6 text-gray-600">See how Common Gathering brings your church together in one simple, peaceful place.</p>
       
-      <video width="100%" height="auto" controls autoplay muted playsinline loop preload="metadata" 
-             class="rounded-2xl max-h-[340px] w-full object-contain">
+      <video id="demoVideo" width="100%" height="auto" controls autoplay muted playsinline loop preload="metadata" class="rounded-2xl max-h-[340px] w-full object-contain">
         <source src="demo.mp4.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -406,6 +405,13 @@
     
     function hideDemo() {
       const modal = document.getElementById('demoModal');
+      const video = document.getElementById('demoVideo');
+      
+      if (video) {
+        video.pause();        // Stops the video and audio
+        video.currentTime = 0; // Optional: resets video to beginning
+      }
+      
       modal.classList.add('hidden');
       modal.classList.remove('flex');
     }
