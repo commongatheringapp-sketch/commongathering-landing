@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Tour • Common Gathering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        
+        .phone-frame {
+            width: 320px;
+            height: 640px;
+            border: 14px solid #1f2937;
+            border-radius: 48px;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+            overflow: hidden;
+            background: #fff;
+            position: relative;
+        }
+        .phone-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease;
+        }
+        .insight-box {
+            position: absolute;
+            top: 38px;
+            right: -290px;
+            width: 280px;
+            background: #2A9D8F;
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 25px 25px 30px -10px rgb(42 157 143 / 0.3);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .insight-box:hover {
+            transform: scale(1.08);
+            box-shadow: 30px 30px 40px -10px rgb(42 157 143 / 0.4);
+        }
+        .insight-box::after {
+            content: '';
+            position: absolute;
+            left: -14px;
+            top: 35px;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-right: 14px solid #2A9D8F;
+        }
+        .thumbnail {
+            transition: all 0.3s ease;
+        }
+        .thumbnail.active {
+            border-color: #2A9D8F;
+            transform: scale(1.08);
+            box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- EXACT NAVBAR FROM YOUR TERMS PAGE (with App Tour added) -->
+    <nav class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="flex items-center gap-x-2">
+                    <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
+                    <span class="text-2xl font-light text-gray-400">|</span>
+                    <span class="text-2xl font-semibold tracking-tight">Common Gathering</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
+                <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
+                <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
+                <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
+                <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
+                <a href="tour.html" class="text-[#2A9D8F] font-semibold">App Tour</a>
+            </div>
+            <div class="flex items-center gap-x-3">
+                <a onclick="showDemo()" class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">Watch Demo</a>
+                <a href="https://apps.apple.com" target="_blank" class="px-6 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
+                    <i class="fab fa-apple text-lg"></i>
+                    <i class="fab fa-google-play text-lg -ml-1"></i>
+                    Download App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-[#264653] mb-3">App Tour</h1>
+            <p class="text-xl text-gray-600 max-w-md mx-auto">Swipe through every screen and see how beautifully simple Common Gathering is for your church family.</p>
+        </div>
+
+        <div class="relative flex justify-center items-start gap-8 flex-wrap lg:flex-nowrap">
+            <div class="relative flex justify-center">
+                <div class="phone-frame">
+                    <img id="phoneScreen" src="Screenshot1.png" alt="Common Gathering App Screenshot">
+                </div>
+
+                <div id="insightBox" class="insight-box">
+                    <p id="insightText" class="text-lg font-medium leading-tight"></p>
+                </div>
+
+                <button onclick="prevScreen()" class="absolute left-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <button onclick="nextScreen()" class="absolute right-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-16">
+            <p class="text-gray-500 text-sm mb-4 text-center">Tap any screenshot to jump straight to it</p>
+            <div id="thumbnails" class="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide"></div>
+        </div>
+    </div>
+
+    <!-- Footer (matching your other pages) -->
+    <footer class="bg-gray-900 text-white/70 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-10">
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-x-2 mb-4">
+                        <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
+                        <span class="text-2xl font-light text-gray-400">|</span>
+                        <span class="text-2xl font-semibold tracking-tight text-white">Common Gathering</span>
+                    </div>
+                    <p class="text-sm max-w-md">A simple, peaceful digital space helping churches stay connected all week long — built on the heart of Acts 2:44.</p>
+                    <div class="mt-6 text-sm">
+                        Email: <a href="mailto:commongatheringapp@gmail.com" class="hover:text-white">commongatheringapp@gmail.com</a>
+                    </div>
+                </div>
+                <div class="md:col-span-3">
+                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="about.html" class="block hover:text-white">About Us</a>
+                        <a href="how-to-videos.html" class="block hover:text-white">How-To Videos</a>
+                        <a href="faq.html" class="block hover:text-white">FAQ</a>
+                    </div>
+                </div>
+                <div class="md:col-span-4">
+                    <h4 class="font-semibold text-white mb-4">Legal</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="privacy.html" class="block hover:text-white">Privacy Policy</a>
+                        <a href="terms.html" class="block hover:text-white">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex gap-x-6 text-2xl">
+                    <a href="https://www.facebook.com/profile.php?id=61560216537888" target="_blank" class="hover:text-[#2A9D8F]"><i class="fab fa-facebook"></i></a>
+                    <a href="https://youtube.com/@commongatheringapp" target="_blank" class="hover:text-[#2A9D8F]"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="text-sm text-center md:text-right">
+                    © 2026 Common Gathering • All Rights Reserved<br>
+                    Made with ❤️ for the Church
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let current = 1;
+        const total = 33;
+
+        const insights = {
+            1: "This is the main welcome screen introducing the app with the message “Connect. Engage. Grow.” It sets the tone for the entire experience and guides users to either get started or log in.",
+            2: "A modern login screen featuring a clean, blurred background and simple input fields. It provides a polished, inviting entry point for users signing into the app.",
+            3: "A full registration form where new users can create an account by entering personal details and uploading a profile image. It ensures each member starts with a complete and personalized profile.",
+            4: "A straightforward login screen with email and password fields and a “Forgot Password?” option. It offers a familiar and simple way for users to access their accounts.",
+            5: "A community feed showing posts from members, organized by category. It encourages engagement and helps users stay connected with what’s happening in the community.",
+            6: "A detailed post view with comments section and liked-by indicator.",
+            7: "A sermon notes page where members can read key scriptures, message points, and takeaways from Sunday’s service. It keeps teaching accessible throughout the week.",
+            8: "A saved‑posts section where users can revisit important posts, resources, or announcements.",
+            9: "Post detail with comments.",
+            10: "Post settings (Admin) — feature, edit, or delete a post.",
+            11: "Side menu / profile options with My Business and quick links.",
+            12: "Search screen showing businesses and events.",
+            13: "Action menu for creating new posts, events, chats, or prayer requests.",
+            14: "Calendar view of the month with upcoming events listed below.",
+            15: "Events page showing both upcoming and past events.",
+            16: "Individual event detail screen with sign-up, location, and admin settings.",
+            17: "Event detail screen with full admin controls (delete option).",
+            18: "My Groups screen showing groups the user has joined.",
+            19: "All Groups directory with join/leave options.",
+            20: "New Group creation form with title, description, and cover photo.",
+            21: "Group chat view for Worship Team with file sharing and member list.",
+            22: "Group chat with delete group option visible to admins.",
+            23: "Share Photo modal inside a group chat.",
+            24: "Share File modal inside a group chat.",
+            25: "Chats list showing recent conversations and unread indicators.",
+            26: "Private chat conversation between two members with timestamps and read receipts.",
+            27: "Chats list with an unread message indicator.",
+            28: "Directory — People tab showing all members.",
+            29: "Directory view with both People and Businesses.",
+            30: "Church admin home screen with Church Settings and Prayer Requests.",
+            31: "Church Settings page for updating name, contact info, logo, and user management.",
+            32: "Prayer Requests management view for admins.",
+            33: "Members list with Pending Users section (admin view)."
+        };
+
+        function updatePhone() {
+            const img = document.getElementById('phoneScreen');
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = `Screenshot${current}.png`;
+                img.style.opacity = '1';
+                document.getElementById('insightText').innerHTML = insights[current] || "Discover this powerful feature in Common Gathering.";
+            }, 300);
+
+            document.querySelectorAll('.thumbnail').forEach(t => {
+                t.classList.toggle('active', parseInt(t.dataset.num) === current);
+            });
+        }
+
+        function nextScreen() { current = current < total ? current + 1 : 1; updatePhone(); }
+        function prevScreen() { current = current > 1 ? current - 1 : total; updatePhone(); }
+        function goToScreen(num) { current = num; updatePhone(); }
+
+        function buildThumbnails() {
+            const container = document.getElementById('thumbnails');
+            container.innerHTML = '';
+            for (let i = 1; i <= total; i++) {
+                const thumb = document.createElement('img');
+                thumb.src = `Screenshot${i}.png`;
+                thumb.className = `thumbnail w-20 h-40 object-cover rounded-3xl border-4 border-transparent cursor-pointer snap-center`;
+                thumb.dataset.num = i;
+                thumb.onclick = () => goToScreen(i);
+                container.appendChild(thumb);
+            }
+        }
+
+        window.onload = () => {
+            buildThumbnails();
+            updatePhone();
+        };
+
+        function showDemo() {
+            alert("Demo modal would open here — copy the showDemo/hideDemo functions from index.html if you want the video modal on this page.");
+        }
+    </script>
+</body>
+</html>
