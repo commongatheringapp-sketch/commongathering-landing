@@ -9,6 +9,20 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body { font-family: 'Inter', system_ui, sans-serif; }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease-out;
+    }
+    .accordion-item.open .accordion-content {
+      max-height: 300px;
+    }
+    .chevron {
+      transition: transform 0.3s ease;
+    }
+    .accordion-item.open .chevron {
+      transform: rotate(180deg);
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -50,24 +64,42 @@
     <h1 class="text-5xl font-semibold mb-2 text-center">Frequently Asked Questions</h1>
     <p class="text-center text-gray-600 mb-12">Everything you need to know about Common Gathering</p>
 
-    <div class="space-y-8">
-      <!-- Add your FAQ items here. Example structure below: -->
-      <div class="border-b pb-8">
-        <h3 class="font-semibold text-xl mb-3">How do I join my church on Common Gathering?</h3>
-        <p class="text-gray-600">Download the app, create an account, and search for your church by name. Once approved by your church admin, you’ll have full access.</p>
+    <!-- ACCORDION FAQ -->
+    <div class="space-y-4" id="faq-accordion">
+      <!-- Question 1 -->
+      <div class="accordion-item border border-gray-200 rounded-3xl overflow-hidden">
+        <button onclick="toggleAccordion(this)" class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50">
+          <span class="font-semibold text-lg">How do I join my church on Common Gathering?</span>
+          <i class="fas fa-chevron-down chevron text-[#2A9D8F]"></i>
+        </button>
+        <div class="accordion-content px-8 pb-6 text-gray-600">
+          Download the app, create an account, and search for your church by name. Once your church admin approves you, you'll have full access to the private community.
+        </div>
       </div>
 
-      <div class="border-b pb-8">
-        <h3 class="font-semibold text-xl mb-3">Is the app free for church members?</h3>
-        <p class="text-gray-600">Yes! The app is completely free for all church members. Churches pay a simple monthly subscription to have their own private community space.</p>
+      <!-- Question 2 -->
+      <div class="accordion-item border border-gray-200 rounded-3xl overflow-hidden">
+        <button onclick="toggleAccordion(this)" class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50">
+          <span class="font-semibold text-lg">Is the app free for church members?</span>
+          <i class="fas fa-chevron-down chevron text-[#2A9D8F]"></i>
+        </button>
+        <div class="accordion-content px-8 pb-6 text-gray-600">
+          Yes! The app is completely free for every church member. Your church simply pays a monthly subscription to have their own private space.
+        </div>
       </div>
 
-      <div class="border-b pb-8">
-        <h3 class="font-semibold text-xl mb-3">Can I use it on both iPhone and Android?</h3>
-        <p class="text-gray-600">Yes, Common Gathering is available on both the Apple App Store and Google Play Store.</p>
+      <!-- Question 3 -->
+      <div class="accordion-item border border-gray-200 rounded-3xl overflow-hidden">
+        <button onclick="toggleAccordion(this)" class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50">
+          <span class="font-semibold text-lg">Can I use it on both iPhone and Android?</span>
+          <i class="fas fa-chevron-down chevron text-[#2A9D8F]"></i>
+        </button>
+        <div class="accordion-content px-8 pb-6 text-gray-600">
+          Yes, Common Gathering is available on both the Apple App Store and Google Play Store.
+        </div>
       </div>
 
-      <!-- Add as many more FAQ items as you like here -->
+      <!-- Add more questions here as needed -->
     </div>
   </div>
 
@@ -135,6 +167,11 @@
   </footer>
 
   <script>
+    function toggleAccordion(button) {
+      const item = button.parentElement;
+      item.classList.toggle('open');
+    }
+
     function showDemo() {
       document.getElementById('demoModal').classList.remove('hidden');
       const video = document.getElementById('demoVideo');
