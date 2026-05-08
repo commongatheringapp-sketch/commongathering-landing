@@ -13,66 +13,83 @@
 </head>
 <body class="bg-white text-gray-900">
 
-  <!-- UPDATED NAVBAR WITH APP TOUR LINK -->
-<nav class="bg-white border-b sticky top-0 z-50">
+  <!-- NAVBAR -->
+  <nav class="bg-white border-b sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        <div class="flex items-center gap-x-3">
-            <div class="flex items-center gap-x-2">
-                <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
-                <span class="text-2xl font-light text-gray-400">|</span>
-                <span class="text-2xl font-semibold tracking-tight">Common Gathering</span>
-            </div>
+      <div class="flex items-center gap-x-3">
+        <div class="flex items-center gap-x-2">
+          <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
+          <span class="text-2xl font-light text-gray-400">|</span>
+          <span class="text-2xl font-semibold tracking-tight">Common Gathering</span>
         </div>
-        <div class="flex items-center gap-x-8 text-sm font-medium">
-            <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
-            <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
-            <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
-            <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
-            <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
-            <a href="tour.html" class="text-[#2A9D8F] font-semibold">App Tour</a>
-        </div>
-        <div class="flex items-center gap-x-3">
-            <a onclick="showDemo()" 
-               class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">
-                Watch Demo
-            </a>
-            <a href="https://apps.apple.com" target="_blank" 
-               class="px-6 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
-                <i class="fab fa-apple text-lg"></i>
-                <i class="fab fa-google-play text-lg -ml-1"></i>
-                Download App
-            </a>
-        </div>
+      </div>
+      <div class="flex items-center gap-x-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
+        <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
+        <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
+        <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
+        <a href="faq.html" class="text-[#2A9D8F] font-semibold">FAQ</a>
+        <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
+      </div>
+      <div class="flex items-center gap-x-3">
+        <a onclick="showDemo()" 
+           class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">
+          Watch Demo
+        </a>
+        <a href="https://apps.apple.com" target="_blank" 
+           class="px-6 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
+          <i class="fab fa-apple text-lg"></i>
+          <i class="fab fa-google-play text-lg -ml-1"></i>
+          Download App
+        </a>
+      </div>
     </div>
-</nav>
+  </nav>
 
   <div class="max-w-4xl mx-auto px-6 py-16">
-    <h1 class="text-5xl font-semibold text-center mb-12">Frequently Asked Questions</h1>
+    <h1 class="text-5xl font-semibold mb-2 text-center">Frequently Asked Questions</h1>
+    <p class="text-center text-gray-600 mb-12">Everything you need to know about Common Gathering</p>
 
-    <div class="space-y-6">
-      <details class="bg-white border border-gray-100 rounded-3xl p-6 group">
-        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">Is the app really free for church members?</summary>
-        <p class="text-gray-600 mt-4">Yes! The app is completely free for every member of your church. Only the church itself pays the monthly subscription.</p>
-      </details>
+    <div class="space-y-8">
+      <!-- Add your FAQ items here. Example structure below: -->
+      <div class="border-b pb-8">
+        <h3 class="font-semibold text-xl mb-3">How do I join my church on Common Gathering?</h3>
+        <p class="text-gray-600">Download the app, create an account, and search for your church by name. Once approved by your church admin, you’ll have full access.</p>
+      </div>
 
-      <details class="bg-white border border-gray-100 rounded-3xl p-6 group">
-        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">How private is my church’s data?</summary>
-        <p class="text-gray-600 mt-4">Extremely. Your data never leaves your private church space. We don’t sell it, we don’t share it, and we don’t use it for ads.</p>
-      </details>
+      <div class="border-b pb-8">
+        <h3 class="font-semibold text-xl mb-3">Is the app free for church members?</h3>
+        <p class="text-gray-600">Yes! The app is completely free for all church members. Churches pay a simple monthly subscription to have their own private community space.</p>
+      </div>
 
-      <details class="bg-white border border-gray-100 rounded-3xl p-6 group">
-        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">Can I white-label the app with my church’s branding?</summary>
-        <p class="text-gray-600 mt-4">Absolutely. Contact us and we’ll set up custom colors, logo, and even your own domain.</p>
-      </details>
+      <div class="border-b pb-8">
+        <h3 class="font-semibold text-xl mb-3">Can I use it on both iPhone and Android?</h3>
+        <p class="text-gray-600">Yes, Common Gathering is available on both the Apple App Store and Google Play Store.</p>
+      </div>
 
-      <details class="bg-white border border-gray-100 rounded-3xl p-6 group">
-        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">What if my church is very small?</summary>
-        <p class="text-gray-600 mt-4">Perfect. Many of our happiest churches have under 100 members. The simplicity is what they love most.</p>
-      </details>
+      <!-- Add as many more FAQ items as you like here -->
     </div>
   </div>
 
-    <!-- FOOTER -->
+  <!-- DEMO VIDEO MODAL -->
+  <div id="demoModal" onclick="if(event.target===this)hideDemo()" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]">
+    <div class="bg-white text-gray-900 rounded-3xl max-w-xl w-full mx-4 p-6">
+      <h3 class="text-3xl font-semibold mb-4">Watch Demo</h3>
+      <p class="mb-6 text-gray-600">See how Common Gathering brings your church together in one simple, peaceful place.</p>
+      
+      <video id="demoVideo" width="100%" height="auto" controls autoplay muted playsinline loop preload="metadata" class="rounded-2xl max-h-[340px] w-full object-contain">
+        <source src="demo.mp4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <button onclick="hideDemo()" 
+              class="mt-8 w-full py-4 text-[#2A9D8F] border border-[#2A9D8F] rounded-3xl font-medium hover:bg-[#2A9D8F] hover:text-white transition">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer class="bg-gray-900 text-white/70 py-16">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-12 gap-10">
@@ -87,7 +104,6 @@
             Email: <a href="mailto:commongatheringapp@gmail.com" class="hover:text-white">commongatheringapp@gmail.com</a>
           </div>
         </div>
-
         <div class="md:col-span-3">
           <h4 class="font-semibold text-white mb-4">Quick Links</h4>
           <div class="space-y-2 text-sm">
@@ -96,7 +112,6 @@
             <a href="faq.html" class="block hover:text-white">FAQ</a>
           </div>
         </div>
-
         <div class="md:col-span-4">
           <h4 class="font-semibold text-white mb-4">Legal</h4>
           <div class="space-y-2 text-sm">
@@ -106,7 +121,6 @@
           </div>
         </div>
       </div>
-
       <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex gap-x-6 text-2xl">
           <a href="https://www.facebook.com/profile.php?id=61560216537888" target="_blank" rel="noopener noreferrer" class="hover:text-[#2A9D8F] transition"><i class="fab fa-facebook"></i></a>
@@ -122,7 +136,22 @@
 
   <script>
     function showDemo() {
-      alert("90-second demo coming soon!");
+      document.getElementById('demoModal').classList.remove('hidden');
+      const video = document.getElementById('demoVideo');
+      if (video) {
+        video.currentTime = 0;
+        video.play();
+      }
+    }
+
+    function hideDemo() {
+      const modal = document.getElementById('demoModal');
+      const video = document.getElementById('demoVideo');
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+      modal.classList.add('hidden');
     }
   </script>
 </body>
