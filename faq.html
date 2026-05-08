@@ -9,20 +9,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body { font-family: 'Inter', system_ui, sans-serif; }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease-out;
-    }
-    .accordion-item.open .accordion-content {
-      max-height: 300px;
-    }
-    .chevron {
-      transition: transform 0.3s ease;
-    }
-    .accordion-item.open .chevron {
-      transform: rotate(180deg);
-    }
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -61,45 +47,36 @@
   </nav>
 
   <div class="max-w-4xl mx-auto px-6 py-16">
-    <h1 class="text-5xl font-semibold mb-2 text-center">Frequently Asked Questions</h1>
-    <p class="text-center text-gray-600 mb-12">Everything you need to know about Common Gathering</p>
+    <h1 class="text-5xl font-semibold text-center mb-12">Frequently Asked Questions</h1>
+    
+    <div class="space-y-6">
+      <details class="bg-white border border-gray-100 rounded-3xl p-6 group">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+          Is the app really free for church members?
+        </summary>
+        <p class="text-gray-600 mt-4">Yes! The app is completely free for every member of your church. Only the church itself pays the monthly subscription.</p>
+      </details>
 
-    <!-- ACCORDION FAQ -->
-    <div class="space-y-4" id="faq-accordion">
-      <!-- Question 1 -->
-      <div class="accordion-item border border-gray-200 rounded-3xl overflow-hidden">
-        <button onclick="toggleAccordion(this)" class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50">
-          <span class="font-semibold text-lg">How do I join my church on Common Gathering?</span>
-          <i class="fas fa-chevron-down chevron text-[#2A9D8F]"></i>
-        </button>
-        <div class="accordion-content px-8 pb-6 text-gray-600">
-          Download the app, create an account, and search for your church by name. Once your church admin approves you, you'll have full access to the private community.
-        </div>
-      </div>
+      <details class="bg-white border border-gray-100 rounded-3xl p-6 group">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+          How private is my church’s data?
+        </summary>
+        <p class="text-gray-600 mt-4">Extremely. Your data never leaves your private church space. We don’t sell it, we don’t share it, and we don’t use it for ads.</p>
+      </details>
 
-      <!-- Question 2 -->
-      <div class="accordion-item border border-gray-200 rounded-3xl overflow-hidden">
-        <button onclick="toggleAccordion(this)" class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50">
-          <span class="font-semibold text-lg">Is the app free for church members?</span>
-          <i class="fas fa-chevron-down chevron text-[#2A9D8F]"></i>
-        </button>
-        <div class="accordion-content px-8 pb-6 text-gray-600">
-          Yes! The app is completely free for every church member. Your church simply pays a monthly subscription to have their own private space.
-        </div>
-      </div>
+      <details class="bg-white border border-gray-100 rounded-3xl p-6 group">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+          Can I white-label the app with my church’s branding?
+        </summary>
+        <p class="text-gray-600 mt-4">Absolutely. Contact us and we’ll set up custom colors, logo, and even your own domain.</p>
+      </details>
 
-      <!-- Question 3 -->
-      <div class="accordion-item border border-gray-200 rounded-3xl overflow-hidden">
-        <button onclick="toggleAccordion(this)" class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50">
-          <span class="font-semibold text-lg">Can I use it on both iPhone and Android?</span>
-          <i class="fas fa-chevron-down chevron text-[#2A9D8F]"></i>
-        </button>
-        <div class="accordion-content px-8 pb-6 text-gray-600">
-          Yes, Common Gathering is available on both the Apple App Store and Google Play Store.
-        </div>
-      </div>
-
-      <!-- Add more questions here as needed -->
+      <details class="bg-white border border-gray-100 rounded-3xl p-6 group">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium">
+          What if my church is very small?
+        </summary>
+        <p class="text-gray-600 mt-4">Perfect. Many of our happiest churches have under 100 members. The simplicity is what they love most.</p>
+      </details>
     </div>
   </div>
 
@@ -167,11 +144,6 @@
   </footer>
 
   <script>
-    function toggleAccordion(button) {
-      const item = button.parentElement;
-      item.classList.toggle('open');
-    }
-
     function showDemo() {
       document.getElementById('demoModal').classList.remove('hidden');
       const video = document.getElementById('demoVideo');
