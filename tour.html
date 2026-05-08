@@ -83,8 +83,12 @@
                 <a href="tour.html" class="text-[#2A9D8F] font-semibold">App Tour</a>
             </div>
             <div class="flex items-center gap-x-3">
-                <a onclick="showDemo()" class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">Watch Demo</a>
-                <a href="https://apps.apple.com" target="_blank" class="px-6 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
+                <a onclick="showDemo()" 
+                   class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">
+                    Watch Demo
+                </a>
+                <a href="https://apps.apple.com" target="_blank" 
+                   class="px-6 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
                     <i class="fab fa-apple text-lg"></i>
                     <i class="fab fa-google-play text-lg -ml-1"></i>
                     Download App
@@ -125,7 +129,25 @@
         </div>
     </div>
 
-    <!-- Footer (matching your other pages) -->
+    <!-- DEMO VIDEO MODAL -->
+    <div id="demoModal" onclick="if(event.target===this)hideDemo()" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]">
+        <div class="bg-white text-gray-900 rounded-3xl max-w-xl w-full mx-4 p-6">
+            <h3 class="text-3xl font-semibold mb-4">Watch Demo</h3>
+            <p class="mb-6 text-gray-600">See how Common Gathering brings your church together in one simple, peaceful place.</p>
+            
+            <video id="demoVideo" width="100%" height="auto" controls autoplay muted playsinline loop preload="metadata" class="rounded-2xl max-h-[340px] w-full object-contain">
+                <source src="demo.mp4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <button onclick="hideDemo()" 
+                    class="mt-8 w-full py-4 text-[#2A9D8F] border border-[#2A9D8F] rounded-3xl font-medium hover:bg-[#2A9D8F] hover:text-white transition">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white/70 py-16">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-12 gap-10">
@@ -245,8 +267,24 @@
             updatePhone();
         };
 
+        /* DEMO VIDEO FUNCTIONS */
         function showDemo() {
-            alert("Demo modal would open here — copy the showDemo/hideDemo functions from index.html if you want the video modal on this page.");
+            document.getElementById('demoModal').classList.remove('hidden');
+            const video = document.getElementById('demoVideo');
+            if (video) {
+                video.currentTime = 0;
+                video.play();
+            }
+        }
+
+        function hideDemo() {
+            const modal = document.getElementById('demoModal');
+            const video = document.getElementById('demoVideo');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+            modal.classList.add('hidden');
         }
     </script>
 </body>
