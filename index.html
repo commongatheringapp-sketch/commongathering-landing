@@ -16,11 +16,10 @@
 </head>
 <body class="bg-white text-gray-900">
 
-<!-- OPTION 1: CLEAN MOBILE NAVBAR -->
+<!-- FULL NAVBAR + TWO STORE BUTTONS -->
 <nav class="bg-white border-b sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-    
-    <!-- Hamburger (left) -->
+    <!-- Hamburger (left on mobile) -->
     <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700 hover:text-[#2A9D8F]">
       <i class="fas fa-bars"></i>
     </button>
@@ -42,22 +41,25 @@
       <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
     </div>
 
-    <!-- Right side buttons (desktop only) -->
+    <!-- Desktop Buttons -->
     <div class="hidden md:flex items-center gap-x-3">
-      <a onclick="showDemo()" 
-         class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">
-        Watch Demo
-      </a>
-      <a href="https://apps.apple.com" target="_blank" 
-         class="px-6 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
+      <a onclick="showDemo()" class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">Watch Demo</a>
+      
+      <!-- Apple App Store -->
+      <a href="https://apps.apple.com" target="_blank" class="px-6 py-2.5 bg-[#264653] hover:bg-[#2A9D8F] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
         <i class="fab fa-apple text-lg"></i>
-        <i class="fab fa-google-play text-lg -ml-1"></i>
-        Download App
+        <span>App Store</span>
+      </a>
+
+      <!-- Google Play -->
+      <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" class="px-6 py-2.5 bg-[#264653] hover:bg-[#2A9D8F] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
+        <i class="fab fa-google-play text-lg"></i>
+        <span>Google Play</span>
       </a>
     </div>
   </div>
 
-  <!-- Mobile Dropdown Menu -->
+  <!-- Mobile Dropdown -->
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
     <div class="flex flex-col gap-y-5 text-base font-medium">
       <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
@@ -67,16 +69,17 @@
       <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
       <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
       
-      <div class="pt-4 border-t flex flex-col gap-3">
-        <a onclick="showDemo()" 
-           class="px-6 py-3 text-center border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">
-          Watch Demo
+      <div class="pt-6 border-t flex flex-col gap-3">
+        <a onclick="showDemo()" class="px-6 py-3 text-center border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white">Watch Demo</a>
+        
+        <a href="https://apps.apple.com" target="_blank" class="px-6 py-3 text-center bg-[#264653] text-white rounded-3xl flex items-center justify-center gap-x-3">
+          <i class="fab fa-apple text-2xl"></i>
+          <span class="font-medium">App Store</span>
         </a>
-        <a href="https://apps.apple.com" target="_blank" 
-           class="px-6 py-3 text-center bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-2 hover:bg-[#264653]">
-          <i class="fab fa-apple"></i>
-          <i class="fab fa-google-play"></i>
-          Download App
+        
+        <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" class="px-6 py-3 text-center bg-[#264653] text-white rounded-3xl flex items-center justify-center gap-x-3">
+          <i class="fab fa-google-play text-2xl"></i>
+          <span class="font-medium">Google Play</span>
         </a>
       </div>
     </div>
@@ -451,7 +454,7 @@
     </div>
   </footer>
 
-   <!-- Demo Modal - Video stops when closed -->
+  <!-- DEMO VIDEO MODAL -->
   <div id="demoModal" onclick="if(event.target===this)hideDemo()" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]">
     <div class="bg-white text-gray-900 rounded-3xl max-w-xl w-full mx-4 p-6">
       <h3 class="text-3xl font-semibold mb-4">Watch Demo</h3>
@@ -462,48 +465,33 @@
         Your browser does not support the video tag.
       </video>
 
-      <button onclick="hideDemo()" class="mt-8 w-full py-4 text-[#2A9D8F] border border-[#2A9D8F] rounded-3xl font-medium">
-        Close
-      </button>
+      <button onclick="hideDemo()" class="mt-8 w-full py-4 text-[#2A9D8F] border border-[#2A9D8F] rounded-3xl font-medium hover:bg-[#2A9D8F] hover:text-white transition">Close</button>
     </div>
   </div>
 
   <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
     function showDemo() {
       document.getElementById('demoModal').classList.remove('hidden');
-      document.getElementById('demoModal').classList.add('flex');
+      const video = document.getElementById('demoVideo');
+      if (video) {
+        video.currentTime = 0;
+        video.play();
+      }
     }
-    
+
     function hideDemo() {
       const modal = document.getElementById('demoModal');
       const video = document.getElementById('demoVideo');
-      
       if (video) {
-        video.pause();        // Stops the video and audio
-        video.currentTime = 0; // Optional: resets video to beginning
+        video.pause();
+        video.currentTime = 0;
       }
-      
       modal.classList.add('hidden');
-      modal.classList.remove('flex');
     }
-    
-    // Fade-in on scroll
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.fade-in').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) el.classList.add('visible');
-      });
-    });
-    
-    // Form submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      // Form will submit via Formsubmit.co - no extra JS needed
-    });
-
-    function toggleMobileMenu() {
-  const menu = document.getElementById('mobile-menu');
-  menu.classList.toggle('hidden');
-}
   </script>
 </body>
 </html>
