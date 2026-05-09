@@ -16,10 +16,11 @@
 </head>
 <body class="bg-white text-gray-900">
 
-<!-- FULL NAVBAR + TWO STORE BUTTONS -->
+<!-- OLD NAVBAR - SINGLE DOWNLOAD APP BUTTON (the one you wanted) -->
 <nav class="bg-white border-b sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-    <!-- Hamburger (left on mobile) -->
+   
+    <!-- Hamburger (left) -->
     <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700 hover:text-[#2A9D8F]">
       <i class="fas fa-bars"></i>
     </button>
@@ -41,25 +42,22 @@
       <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
     </div>
 
-    <!-- Desktop Buttons -->
+    <!-- Right side buttons (desktop only) - SINGLE DOWNLOAD APP BUTTON -->
     <div class="hidden md:flex items-center gap-x-3">
-      <a onclick="showDemo()" class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">Watch Demo</a>
-      
-      <!-- Apple App Store -->
-      <a href="https://apps.apple.com" target="_blank" class="px-6 py-2.5 bg-[#264653] hover:bg-[#2A9D8F] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
-        <i class="fab fa-apple text-lg"></i>
-        <span>App Store</span>
+      <a onclick="showDemo()" 
+         class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">
+        Watch Demo
       </a>
-
-      <!-- Google Play -->
-      <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" class="px-6 py-2.5 bg-[#264653] hover:bg-[#2A9D8F] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
-        <i class="fab fa-google-play text-lg"></i>
-        <span>Google Play</span>
+      <a href="https://apps.apple.com" target="_blank" 
+         class="px-6 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
+        <i class="fab fa-apple text-lg"></i>
+        <i class="fab fa-google-play text-lg -ml-1"></i>
+        Download App
       </a>
     </div>
   </div>
 
-  <!-- Mobile Dropdown -->
+  <!-- Mobile Dropdown Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
     <div class="flex flex-col gap-y-5 text-base font-medium">
       <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
@@ -69,23 +67,21 @@
       <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
       <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
       
-      <div class="pt-6 border-t flex flex-col gap-3">
-        <a onclick="showDemo()" class="px-6 py-3 text-center border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white">Watch Demo</a>
-        
-        <a href="https://apps.apple.com" target="_blank" class="px-6 py-3 text-center bg-[#264653] text-white rounded-3xl flex items-center justify-center gap-x-3">
-          <i class="fab fa-apple text-2xl"></i>
-          <span class="font-medium">App Store</span>
+      <div class="pt-4 border-t flex flex-col gap-3">
+        <a onclick="showDemo()" 
+           class="px-6 py-3 text-center border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">
+          Watch Demo
         </a>
-        
-        <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" class="px-6 py-3 text-center bg-[#264653] text-white rounded-3xl flex items-center justify-center gap-x-3">
-          <i class="fab fa-google-play text-2xl"></i>
-          <span class="font-medium">Google Play</span>
+        <a href="https://apps.apple.com" target="_blank" 
+           class="px-6 py-3 text-center bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-2 hover:bg-[#264653]">
+          <i class="fab fa-apple"></i>
+          <i class="fab fa-google-play"></i>
+          Download App
         </a>
       </div>
     </div>
   </div>
 </nav>
-
   <!-- HERO -->
   <section class="hero-bg text-white py-24">
     <div class="max-w-5xl mx-auto px-6 text-center">
