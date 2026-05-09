@@ -16,73 +16,69 @@
 </head>
 <body class="bg-white text-gray-900">
 
-<!-- OLD NAVBAR - SINGLE DOWNLOAD APP BUTTON (the one you wanted) -->
-<nav class="bg-white border-b sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-   
-    <!-- Hamburger (left) -->
-    <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700 hover:text-[#2A9D8F]">
-      <i class="fas fa-bars"></i>
-    </button>
+  <!-- NAVBAR WITH SPLIT SMALL DOWNLOAD BUTTONS -->
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <!-- Hamburger (left on mobile) -->
+      <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700 hover:text-[#2A9D8F]">
+        <i class="fas fa-bars"></i>
+      </button>
 
-    <!-- Logo -->
-    <div class="flex items-center gap-x-2">
-      <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
-      <span class="text-2xl font-light text-gray-400">|</span>
-      <span class="text-2xl font-semibold tracking-tight">Common Gathering</span>
-    </div>
+      <!-- Logo -->
+      <div class="flex items-center gap-x-2">
+        <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
+        <span class="text-2xl font-light text-gray-400">|</span>
+        <span class="text-2xl font-semibold tracking-tight">Common Gathering</span>
+      </div>
 
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-      <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
-      <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
-      <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
-      <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
-      <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
-      <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
-    </div>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
+        <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
+        <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
+        <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
+        <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
+        <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
+      </div>
 
-    <!-- Right side buttons (desktop only) - SINGLE DOWNLOAD APP BUTTON -->
-    <div class="hidden md:flex items-center gap-x-3">
-      <a onclick="showDemo()" 
-         class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">
-        Watch Demo
-      </a>
-      <a href="https://apps.apple.com" target="_blank" 
-         class="px-6 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
-        <i class="fab fa-apple text-lg"></i>
-        <i class="fab fa-google-play text-lg -ml-1"></i>
-        Download App
-      </a>
-    </div>
-  </div>
-
-  <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
-    <div class="flex flex-col gap-y-5 text-base font-medium">
-      <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
-      <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
-      <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
-      <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
-      <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
-      <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
-      
-      <div class="pt-4 border-t flex flex-col gap-3">
-        <a onclick="showDemo()" 
-           class="px-6 py-3 text-center border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">
-          Watch Demo
+      <!-- Desktop Buttons - Small Split Store Buttons -->
+      <div class="hidden md:flex items-center gap-x-3">
+        <a onclick="showDemo()" class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">Watch Demo</a>
+        
+        <!-- Apple App Store -->
+        <a href="https://apps.apple.com" target="_blank" class="px-6 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
+          <i class="fab fa-apple text-lg"></i>
+          <span>App Store</span>
         </a>
-        <a href="https://apps.apple.com" target="_blank" 
-           class="px-6 py-3 text-center bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-2 hover:bg-[#264653]">
-          <i class="fab fa-apple"></i>
-          <i class="fab fa-google-play"></i>
-          Download App
+
+        <!-- Google Play -->
+        <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" class="px-6 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
+          <i class="fab fa-google-play text-lg"></i>
+          <span>Google Play</span>
         </a>
       </div>
     </div>
-  </div>
-</nav>
-  <!-- HERO -->
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
+      <div class="flex flex-col gap-y-5 text-base font-medium">
+        <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
+        <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
+        <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
+        <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
+        <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
+        <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
+        
+        <div class="pt-4 border-t flex flex-col gap-3">
+          <a onclick="showDemo()" class="px-6 py-3 text-center border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white">Watch Demo</a>
+          <a href="https://apps.apple.com" target="_blank" class="px-6 py-3 text-center bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-2">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" class="px-6 py-3 text-center bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-2">Google Play</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO (big buttons removed) -->
   <section class="hero-bg text-white py-24">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <div class="inline-flex items-center gap-x-2 bg-white/10 text-white text-sm font-medium px-6 py-2 rounded-3xl mb-6 backdrop-blur-sm">
@@ -98,28 +94,6 @@
       <p class="text-2xl text-white/90 max-w-2xl mx-auto mb-10">
         Minimalist. Distraction-free. Built for pastors who want real connection — not another noisy group chat.
       </p>
-     <!-- NEW DOWNLOAD BUTTONS (no price mentioned) -->
-<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-  <!-- Apple App Store -->
-  <a href="https://apps.apple.com" target="_blank" 
-     class="group flex-1 sm:flex-none px-8 py-5 bg-[#264653] hover:bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-4 transition-all">
-    <i class="fab fa-apple text-4xl"></i>
-    <div class="text-left">
-      <div class="text-xs tracking-widest">Download on the</div>
-      <div class="text-2xl font-semibold">App Store</div>
-    </div>
-  </a>
-
-  <!-- Google Play Store -->
-  <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" 
-     class="group flex-1 sm:flex-none px-8 py-5 bg-[#264653] hover:bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-4 transition-all">
-    <i class="fab fa-google-play text-4xl"></i>
-    <div class="text-left">
-      <div class="text-xs tracking-widest">Get it on</div>
-      <div class="text-2xl font-semibold">Google Play</div>
-    </div>
-  </a>
-</div>
       <p class="text-white/70 mt-8 text-sm">Don’t be a doubting Thomas — your congregation is already waiting.</p>
     </div>
   </section>
