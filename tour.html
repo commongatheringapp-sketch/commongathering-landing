@@ -27,15 +27,30 @@
             transition: opacity 0.4s ease;
         }
         .insight-box {
+            position: absolute;
+            top: 38px;
+            right: -290px;
+            width: 280px;
             background: #2A9D8F;
             color: white;
             padding: 20px;
             border-radius: 20px;
             box-shadow: 25px 25px 30px -10px rgb(42 157 143 / 0.3);
             transition: all 0.3s ease;
+            z-index: 10;
         }
         .insight-box:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 30px 30px 40px -10px rgb(42 157 143 / 0.4);
+        }
+        .insight-box::after {
+            content: '';
+            position: absolute;
+            left: -14px;
+            top: 35px;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-right: 14px solid #2A9D8F;
         }
         .thumbnail {
             transition: all 0.3s ease;
@@ -102,23 +117,24 @@
     </div>
 
     <!-- PHONE + INSIGHT BOX -->
-    <div class="flex flex-col lg:flex-row justify-center items-start gap-8 lg:gap-12 relative max-w-5xl mx-auto">
-      <!-- Phone -->
+    <div class="flex justify-center items-start">
+      <!-- Phone wrapper: position:relative so the insight box anchors to it -->
       <div class="relative flex justify-center">
         <div class="phone-frame">
           <img id="phoneScreen" src="Screenshot1.png" alt="App Screenshot">
         </div>
+
+        <!-- Insight box: absolutely positioned to the right of the phone -->
+        <div id="insightBox" class="insight-box">
+          <p id="insightText" class="text-lg font-medium leading-tight"></p>
+        </div>
+
         <button onclick="prevScreen()" class="absolute left-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
           <i class="fas fa-chevron-left"></i>
         </button>
         <button onclick="nextScreen()" class="absolute right-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
           <i class="fas fa-chevron-right"></i>
         </button>
-      </div>
-
-      <!-- Insight Box -->
-      <div id="insightBox" class="insight-box w-full lg:w-[280px] lg:absolute lg:top-12 lg:-right-[12px]">
-        <p id="insightText" class="text-lg font-medium leading-tight"></p>
       </div>
     </div>
 
@@ -190,13 +206,13 @@
     const total = 33;
 
     const insights = {
-      1: "This is the main welcome screen introducing the app with the message “Connect. Engage. Grow.” It sets the tone for the entire experience and guides users to either get started or log in.",
+      1: "This is the main welcome screen introducing the app with the message "Connect. Engage. Grow." It sets the tone for the entire experience and guides users to either get started or log in.",
       2: "A modern login screen featuring a clean, blurred background and simple input fields.",
       3: "A full registration form where new users can create an account by entering personal details and uploading a profile image.",
-      4: "A straightforward login screen with email and password fields and a “Forgot Password?” option.",
+      4: "A straightforward login screen with email and password fields and a "Forgot Password?" option.",
       5: "A community feed showing posts from members, organized by category.",
       6: "A detailed post view with comments section and liked-by indicator.",
-      7: "A sermon notes page where members can read key scriptures, message points, and takeaways from Sunday’s service.",
+      7: "A sermon notes page where members can read key scriptures, message points, and takeaways from Sunday's service.",
       8: "A saved‑posts section where users can revisit important posts, resources, or announcements.",
       9: "Post detail with comments.",
       10: "Post settings (Admin) — feature, edit, or delete a post.",
