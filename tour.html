@@ -27,30 +27,15 @@
             transition: opacity 0.4s ease;
         }
         .insight-box {
-            position: absolute;
-            top: 38px;
-            right: -290px;           /* ← Your old preferred position */
-            width: 280px;
             background: #2A9D8F;
             color: white;
             padding: 20px;
             border-radius: 20px;
             box-shadow: 25px 25px 30px -10px rgb(42 157 143 / 0.3);
             transition: all 0.3s ease;
-            z-index: 10;
         }
         .insight-box:hover {
-            transform: scale(1.08);
-            box-shadow: 30px 30px 40px -10px rgb(42 157 143 / 0.4);
-        }
-        .insight-box::after {
-            content: '';
-            position: absolute;
-            left: -14px;
-            top: 35px;
-            border-top: 12px solid transparent;
-            border-bottom: 12px solid transparent;
-            border-right: 14px solid #2A9D8F;
+            transform: scale(1.05);
         }
         .thumbnail {
             transition: all 0.3s ease;
@@ -64,7 +49,7 @@
 </head>
 <body class="bg-white text-gray-900">
 
-  <!-- UPDATED NAVBAR (matches all other pages) -->
+  <!-- NAVBAR -->
   <nav class="bg-white border-b sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
       <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700 hover:text-[#2A9D8F]">
@@ -93,7 +78,6 @@
         </a>
       </div>
     </div>
-
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
       <div class="flex flex-col gap-y-5 text-base font-medium">
         <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
@@ -117,13 +101,12 @@
       <p class="text-xl text-gray-600 max-w-md mx-auto">Swipe through every screen and see how beautifully simple Common Gathering is for your church family.</p>
     </div>
 
-    <div class="relative flex justify-center items-start gap-8 flex-wrap lg:flex-nowrap">
+    <!-- PHONE + INSIGHT BOX -->
+    <div class="flex flex-col lg:flex-row justify-center items-start gap-8 lg:gap-12 relative max-w-5xl mx-auto">
+      <!-- Phone -->
       <div class="relative flex justify-center">
         <div class="phone-frame">
-          <img id="phoneScreen" src="Screenshot1.png" alt="Common Gathering App Screenshot">
-        </div>
-        <div id="insightBox" class="insight-box">
-          <p id="insightText" class="text-lg font-medium leading-tight"></p>
+          <img id="phoneScreen" src="Screenshot1.png" alt="App Screenshot">
         </div>
         <button onclick="prevScreen()" class="absolute left-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
           <i class="fas fa-chevron-left"></i>
@@ -131,6 +114,11 @@
         <button onclick="nextScreen()" class="absolute right-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
           <i class="fas fa-chevron-right"></i>
         </button>
+      </div>
+
+      <!-- Insight Box -->
+      <div id="insightBox" class="insight-box w-full lg:w-[280px] lg:absolute lg:top-12 lg:-right-[12px]">
+        <p id="insightText" class="text-lg font-medium leading-tight"></p>
       </div>
     </div>
 
@@ -152,7 +140,7 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="bg-gray-900 text-white/70 py-16">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-12 gap-10">
@@ -197,7 +185,7 @@
     </div>
   </footer>
 
-   <script>
+  <script>
     let current = 1;
     const total = 33;
 
@@ -237,7 +225,6 @@
       33: "Members list with Pending Users section (admin view)."
     };
 
-
     function updatePhone() {
       const img = document.getElementById('phoneScreen');
       img.style.opacity = '0';
@@ -273,13 +260,19 @@
     function showDemo() {
       document.getElementById('demoModal').classList.remove('hidden');
       const video = document.getElementById('demoVideo');
-      if (video) video.play();
+      if (video) {
+        video.currentTime = 0;
+        video.play();
+      }
     }
 
     function hideDemo() {
       const modal = document.getElementById('demoModal');
       const video = document.getElementById('demoVideo');
-      if (video) video.pause();
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
       modal.classList.add('hidden');
     }
 
