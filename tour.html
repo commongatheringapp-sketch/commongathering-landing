@@ -1,51 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Tour • Common Gathering</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-    body { font-family: 'Inter', system_ui, sans-serif; }
-    .phone-frame {
-      width: 320px;
-      height: 640px;
-      border: 14px solid #1f2937;
-      border-radius: 48px;
-      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
-      overflow: hidden;
-      background: #fff;
-      position: relative;
-    }
-    .phone-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 0.4s ease;
-    }
-    .insight-box {
-      background: #2A9D8F;
-      color: white;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 25px 25px 30px -10px rgb(42 157 143 / 0.3);
-      transition: all 0.3s ease;
-    }
-    .thumbnail {
-      transition: all 0.3s ease;
-    }
-    .thumbnail.active {
-      border-color: #2A9D8F;
-      transform: scale(1.08);
-      box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.3);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Tour • Common Gathering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+       
+        .phone-frame {
+            width: 320px;
+            height: 640px;
+            border: 14px solid #1f2937;
+            border-radius: 48px;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+            overflow: hidden;
+            background: #fff;
+            position: relative;
+        }
+        .phone-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease;
+        }
+        .insight-box {
+            position: absolute;
+            top: 38px;
+            right: -290px;           /* ← Your old preferred position */
+            width: 280px;
+            background: #2A9D8F;
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 25px 25px 30px -10px rgb(42 157 143 / 0.3);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .insight-box:hover {
+            transform: scale(1.08);
+            box-shadow: 30px 30px 40px -10px rgb(42 157 143 / 0.4);
+        }
+        .insight-box::after {
+            content: '';
+            position: absolute;
+            left: -14px;
+            top: 35px;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-right: 14px solid #2A9D8F;
+        }
+        .thumbnail {
+            transition: all 0.3s ease;
+        }
+        .thumbnail.active {
+            border-color: #2A9D8F;
+            transform: scale(1.08);
+            box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.3);
+        }
+    </style>
 </head>
 <body class="bg-white text-gray-900">
 
-  <!-- NAVBAR -->
+  <!-- UPDATED NAVBAR (matches all other pages) -->
   <nav class="bg-white border-b sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
       <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700 hover:text-[#2A9D8F]">
@@ -74,6 +93,7 @@
         </a>
       </div>
     </div>
+
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
       <div class="flex flex-col gap-y-5 text-base font-medium">
         <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
@@ -97,25 +117,20 @@
       <p class="text-xl text-gray-600 max-w-md mx-auto">Swipe through every screen and see how beautifully simple Common Gathering is for your church family.</p>
     </div>
 
-    <!-- PHONE + INSIGHT BOX CONTAINER -->
-    <div class="flex flex-col md:flex-row justify-center items-start gap-8 lg:gap-12 relative">
-      
-      <!-- Phone -->
-      <div class="relative flex flex-col items-center">
+    <div class="relative flex justify-center items-start gap-8 flex-wrap lg:flex-nowrap">
+      <div class="relative flex justify-center">
         <div class="phone-frame">
-          <img id="phoneScreen" src="Screenshot1.png" alt="App Screenshot">
+          <img id="phoneScreen" src="Screenshot1.png" alt="Common Gathering App Screenshot">
         </div>
-        <button onclick="prevScreen()" class="absolute left-[-60px] md:left-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
+        <div id="insightBox" class="insight-box">
+          <p id="insightText" class="text-lg font-medium leading-tight"></p>
+        </div>
+        <button onclick="prevScreen()" class="absolute left-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
           <i class="fas fa-chevron-left"></i>
         </button>
-        <button onclick="nextScreen()" class="absolute right-[-60px] md:right-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
+        <button onclick="nextScreen()" class="absolute right-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
           <i class="fas fa-chevron-right"></i>
         </button>
-      </div>
-
-      <!-- Insight Box - RIGHT SIDE on desktop, BELOW on mobile -->
-      <div id="insightBox" class="insight-box w-full md:w-[280px] md:absolute md:top-12 md:-right-[290px]">
-        <p id="insightText" class="text-lg font-medium leading-tight"></p>
       </div>
     </div>
 
@@ -137,7 +152,7 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="bg-gray-900 text-white/70 py-16">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-12 gap-10">
@@ -182,7 +197,7 @@
     </div>
   </footer>
 
-  <script>
+   <script>
     let current = 1;
     const total = 33;
 
@@ -222,6 +237,7 @@
       33: "Members list with Pending Users section (admin view)."
     };
 
+
     function updatePhone() {
       const img = document.getElementById('phoneScreen');
       img.style.opacity = '0';
@@ -257,19 +273,13 @@
     function showDemo() {
       document.getElementById('demoModal').classList.remove('hidden');
       const video = document.getElementById('demoVideo');
-      if (video) {
-        video.currentTime = 0;
-        video.play();
-      }
+      if (video) video.play();
     }
 
     function hideDemo() {
       const modal = document.getElementById('demoModal');
       const video = document.getElementById('demoVideo');
-      if (video) {
-        video.pause();
-        video.currentTime = 0;
-      }
+      if (video) video.pause();
       modal.classList.add('hidden');
     }
 
