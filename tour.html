@@ -9,7 +9,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body { font-family: 'Inter', system_ui, sans-serif; }
-    
     .phone-frame {
       width: 320px;
       height: 640px;
@@ -46,68 +45,64 @@
 </head>
 <body class="bg-white text-gray-900">
 
-<!-- NAVBAR - FIXED WRAPPING + SPLIT STORE BUTTONS -->
-<nav class="bg-white border-b sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-    <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700 hover:text-[#2A9D8F]">
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="flex items-center gap-x-2">
-      <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
-      <span class="text-2xl font-light text-gray-400">|</span>
-      <span class="text-2xl font-semibold tracking-tight">Common Gathering</span>
-    </div>
-    <div class="hidden md:flex items-center gap-x-5 text-sm font-medium">
-      <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
-      <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
-      <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
-      <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
-      <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
-      <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
-    </div>
-    <div class="hidden md:flex items-center gap-x-2">
-      <a onclick="showDemo()" class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">Watch Demo</a>
-      <a href="https://apps.apple.com" target="_blank" class="px-5 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
-        <i class="fab fa-apple text-lg"></i><span>App Store</span>
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" class="px-5 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
-        <i class="fab fa-google-play text-lg"></i><span>Google Play</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
-    <div class="flex flex-col gap-y-5 text-base font-medium">
-      <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
-      <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
-      <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
-      <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
-      <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
-      <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
-      <div class="pt-4 border-t flex flex-col gap-3">
-        <a onclick="showDemo()" class="px-6 py-3 text-center border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white">Watch Demo</a>
-        <a href="https://apps.apple.com" target="_blank" class="px-6 py-3 text-center bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-2">App Store</a>
-        <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" class="px-6 py-3 text-center bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-2">Google Play</a>
+  <!-- NAVBAR -->
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700 hover:text-[#2A9D8F]">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="flex items-center gap-x-2">
+        <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
+        <span class="text-2xl font-light text-gray-400">|</span>
+        <span class="text-2xl font-semibold tracking-tight">Common Gathering</span>
+      </div>
+      <div class="hidden md:flex items-center gap-x-5 text-sm font-medium">
+        <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
+        <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
+        <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
+        <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
+        <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
+        <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
+      </div>
+      <div class="hidden md:flex items-center gap-x-2">
+        <a onclick="showDemo()" class="px-6 py-2.5 text-sm font-medium border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white transition-all">Watch Demo</a>
+        <a href="https://apps.apple.com" target="_blank" class="px-5 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
+          <i class="fab fa-apple text-lg"></i><span>App Store</span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" class="px-5 py-2.5 bg-[#2A9D8F] hover:bg-[#264653] text-white text-sm font-medium rounded-3xl flex items-center gap-x-2 transition-all">
+          <i class="fab fa-google-play text-lg"></i><span>Google Play</span>
+        </a>
       </div>
     </div>
-  </div>
-</nav>
-  
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
+      <div class="flex flex-col gap-y-5 text-base font-medium">
+        <a href="index.html" class="hover:text-[#2A9D8F]">Home</a>
+        <a href="about.html" class="hover:text-[#2A9D8F]">About Us</a>
+        <a href="pricing.html" class="hover:text-[#2A9D8F]">Pricing</a>
+        <a href="how-to-videos.html" class="hover:text-[#2A9D8F]">How-To Videos</a>
+        <a href="faq.html" class="hover:text-[#2A9D8F]">FAQ</a>
+        <a href="tour.html" class="hover:text-[#2A9D8F]">App Tour</a>
+        <div class="pt-4 border-t flex flex-col gap-3">
+          <a onclick="showDemo()" class="px-6 py-3 text-center border border-[#2A9D8F] text-[#2A9D8F] rounded-3xl hover:bg-[#2A9D8F] hover:text-white">Watch Demo</a>
+          <a href="https://apps.apple.com" target="_blank" class="px-6 py-3 text-center bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-2">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.commongatheringapp" target="_blank" class="px-6 py-3 text-center bg-[#2A9D8F] text-white rounded-3xl flex items-center justify-center gap-x-2">Google Play</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
   <div class="max-w-7xl mx-auto px-6 py-16">
     <div class="text-center mb-12">
       <h1 class="text-5xl font-bold text-[#264653] mb-3">App Tour</h1>
       <p class="text-xl text-gray-600 max-w-md mx-auto">Swipe through every screen and see how beautifully simple Common Gathering is for your church family.</p>
     </div>
 
-    <!-- Tour Container -->
     <div class="flex flex-col md:flex-row justify-center items-start gap-8 lg:gap-12">
-      <!-- Phone + Arrows -->
+      <!-- Phone -->
       <div class="relative flex flex-col items-center">
         <div class="phone-frame">
-          <img id="phoneScreen" src="Screenshot1.png" alt="Common Gathering App Screenshot">
+          <img id="phoneScreen" src="Screenshot1.png" alt="App Screenshot">
         </div>
-
         <button onclick="prevScreen()" class="absolute left-[-60px] md:left-[-70px] top-1/2 -translate-y-1/2 bg-white hover:bg-[#2A9D8F] text-[#264653] hover:text-white w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center shadow-xl text-2xl transition-all">
           <i class="fas fa-chevron-left"></i>
         </button>
@@ -116,13 +111,12 @@
         </button>
       </div>
 
-      <!-- Insight Box -->
+      <!-- Insight Box - RIGHT SIDE on desktop, BELOW on mobile -->
       <div id="insightBox" class="insight-box w-full md:w-[280px] md:absolute md:top-12 md:-right-[290px]">
         <p id="insightText" class="text-lg font-medium leading-tight"></p>
       </div>
     </div>
 
-    <!-- Thumbnails -->
     <div class="mt-16">
       <p class="text-gray-500 text-sm mb-4 text-center">Tap any screenshot to jump straight to it</p>
       <div id="thumbnails" class="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide"></div>
@@ -134,12 +128,9 @@
     <div class="bg-white text-gray-900 rounded-3xl max-w-xl w-full mx-4 p-6">
       <h3 class="text-3xl font-semibold mb-4">Watch Demo</h3>
       <p class="mb-6 text-gray-600">See how Common Gathering brings your church together in one simple, peaceful place.</p>
-      
       <video id="demoVideo" width="100%" height="auto" controls autoplay muted playsinline loop preload="metadata" class="rounded-2xl max-h-[340px] w-full object-contain">
         <source src="demo.mp4.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
-
       <button onclick="hideDemo()" class="mt-8 w-full py-4 text-[#2A9D8F] border border-[#2A9D8F] rounded-3xl font-medium hover:bg-[#2A9D8F] hover:text-white transition">Close</button>
     </div>
   </div>
@@ -195,12 +186,12 @@
 
     const insights = {
       1: "This is the main welcome screen introducing the app with the message “Connect. Engage. Grow.” It sets the tone for the entire experience and guides users to either get started or log in.",
-      2: "A modern login screen featuring a clean, blurred background and simple input fields. It provides a polished, inviting entry point for users signing into the app.",
-      3: "A full registration form where new users can create an account by entering personal details and uploading a profile image. It ensures each member starts with a complete and personalized profile.",
-      4: "A straightforward login screen with email and password fields and a “Forgot Password?” option. It offers a familiar and simple way for users to access their accounts.",
-      5: "A community feed showing posts from members, organized by category. It encourages engagement and helps users stay connected with what’s happening in the community.",
+      2: "A modern login screen featuring a clean, blurred background and simple input fields.",
+      3: "A full registration form where new users can create an account by entering personal details and uploading a profile image.",
+      4: "A straightforward login screen with email and password fields and a “Forgot Password?” option.",
+      5: "A community feed showing posts from members, organized by category.",
       6: "A detailed post view with comments section and liked-by indicator.",
-      7: "A sermon notes page where members can read key scriptures, message points, and takeaways from Sunday’s service. It keeps teaching accessible throughout the week.",
+      7: "A sermon notes page where members can read key scriptures, message points, and takeaways from Sunday’s service.",
       8: "A saved‑posts section where users can revisit important posts, resources, or announcements.",
       9: "Post detail with comments.",
       10: "Post settings (Admin) — feature, edit, or delete a post.",
@@ -237,10 +228,7 @@
         img.style.opacity = '1';
         document.getElementById('insightText').innerHTML = insights[current] || "Discover this powerful feature in Common Gathering.";
       }, 300);
-
-      document.querySelectorAll('.thumbnail').forEach(t => {
-        t.classList.toggle('active', parseInt(t.dataset.num) === current);
-      });
+      document.querySelectorAll('.thumbnail').forEach(t => t.classList.toggle('active', parseInt(t.dataset.num) === current));
     }
 
     function nextScreen() { current = current < total ? current + 1 : 1; updatePhone(); }
@@ -261,8 +249,7 @@
     }
 
     function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
+      document.getElementById('mobile-menu').classList.toggle('hidden');
     }
 
     function showDemo() {
@@ -289,65 +276,5 @@
       updatePhone();
     };
   </script>
-
-  <!-- DEMO VIDEO MODAL -->
-  <div id="demoModal" onclick="if(event.target===this)hideDemo()" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]">
-    <div class="bg-white text-gray-900 rounded-3xl max-w-xl w-full mx-4 p-6">
-      <h3 class="text-3xl font-semibold mb-4">Watch Demo</h3>
-      <p class="mb-6 text-gray-600">See how Common Gathering brings your church together in one simple, peaceful place.</p>
-      
-      <video id="demoVideo" width="100%" height="auto" controls autoplay muted playsinline loop preload="metadata" class="rounded-2xl max-h-[340px] w-full object-contain">
-        <source src="demo.mp4.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-
-      <button onclick="hideDemo()" class="mt-8 w-full py-4 text-[#2A9D8F] border border-[#2A9D8F] rounded-3xl font-medium hover:bg-[#2A9D8F] hover:text-white transition">Close</button>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-white/70 py-16">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-12 gap-10">
-        <div class="md:col-span-5">
-          <div class="flex items-center gap-x-2 mb-4">
-            <span class="text-4xl font-bold text-[#2A9D8F]">CG</span>
-            <span class="text-2xl font-light text-gray-400">|</span>
-            <span class="text-2xl font-semibold tracking-tight text-white">Common Gathering</span>
-          </div>
-          <p class="text-sm max-w-md">A simple, peaceful digital space helping churches stay connected all week long — built on the heart of Acts 2:44.</p>
-          <div class="mt-6 text-sm">
-            Email: <a href="mailto:commongatheringapp@gmail.com" class="hover:text-white">commongatheringapp@gmail.com</a>
-          </div>
-        </div>
-        <div class="md:col-span-3">
-          <h4 class="font-semibold text-white mb-4">Quick Links</h4>
-          <div class="space-y-2 text-sm">
-            <a href="about.html" class="block hover:text-white">About Us</a>
-            <a href="how-to-videos.html" class="block hover:text-white">How-To Videos</a>
-            <a href="faq.html" class="block hover:text-white">FAQ</a>
-          </div>
-        </div>
-        <div class="md:col-span-4">
-          <h4 class="font-semibold text-white mb-4">Legal</h4>
-          <div class="space-y-2 text-sm">
-            <a href="privacy.html" class="block hover:text-white">Privacy Policy</a>
-            <a href="terms.html" class="block hover:text-white">Terms & Conditions</a>
-            <a href="safety-guidelines.html" class="block hover:text-white">Safety Guidelines</a>
-          </div>
-        </div>
-      </div>
-      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex gap-x-6 text-2xl">
-          <a href="https://www.facebook.com/profile.php?id=61560216537888" target="_blank" rel="noopener noreferrer" class="hover:text-[#2A9D8F] transition"><i class="fab fa-facebook"></i></a>
-          <a href="https://youtube.com/@commongatheringapp" target="_blank" rel="noopener noreferrer" class="hover:text-[#2A9D8F] transition"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="text-sm text-center md:text-right">
-          © 2026 Common Gathering • All Rights Reserved<br>
-          Made with ❤️ for the Church
-        </div>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
