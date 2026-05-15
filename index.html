@@ -12,7 +12,14 @@
     .hero-bg { background: linear-gradient(135deg, #264653 0%, #2A9D8F 100%); }
     .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
-  </style>
+
+    /* Staggered animation delays */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+    </style>
 </head>
 <body class="bg-white text-gray-900">
 
@@ -167,21 +174,21 @@
 
   <!-- FEATURES FOR CONGREGATION -->
   <section id="features" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-5xl font-semibold">For your people too</h2>
-        <p class="text-xl text-gray-600 mt-3">They just open the app and feel connected — no learning curve.</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-gray-50 rounded-3xl p-8 text-center">📲 Clean chronological feed</div>
-        <div class="bg-gray-50 rounded-3xl p-8 text-center">📍 Event calendar & RSVPs</div>
-        <div class="bg-gray-50 rounded-3xl p-8 text-center">👥 Join any ministry group</div>
-        <div class="bg-gray-50 rounded-3xl p-8 text-center">🙏 Submit & see prayer requests</div>
-        <div class="bg-gray-50 rounded-3xl p-8 text-center">📖 Sermons, devotionals & resources</div>
-        <div class="bg-gray-50 rounded-3xl p-8 text-center">🔒 Private & safe by design</div>
-      </div>
-    </div>
-  </section>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-semibold">For your people too</h2>
+                <p class="text-xl text-gray-600 mt-3">They just open the app and feel connected — no learning curve.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="fade-in bg-gray-50 rounded-3xl p-8 text-center hover:-translate-y-2 hover:shadow-xl hover:bg-white transition-all duration-300 cursor-default">📲 Clean chronological feed</div>
+                <div class="fade-in delay-100 bg-gray-50 rounded-3xl p-8 text-center hover:-translate-y-2 hover:shadow-xl hover:bg-white transition-all duration-300 cursor-default">📍 Event calendar & RSVPs</div>
+                <div class="fade-in delay-200 bg-gray-50 rounded-3xl p-8 text-center hover:-translate-y-2 hover:shadow-xl hover:bg-white transition-all duration-300 cursor-default">👥 Join any ministry group</div>
+                <div class="fade-in delay-300 bg-gray-50 rounded-3xl p-8 text-center hover:-translate-y-2 hover:shadow-xl hover:bg-white transition-all duration-300 cursor-default">🙏 Submit & see prayer requests</div>
+                <div class="fade-in delay-400 bg-gray-50 rounded-3xl p-8 text-center hover:-translate-y-2 hover:shadow-xl hover:bg-white transition-all duration-300 cursor-default">📖 Sermons, devotionals & resources</div>
+                <div class="fade-in delay-500 bg-gray-50 rounded-3xl p-8 text-center hover:-translate-y-2 hover:shadow-xl hover:bg-white transition-all duration-300 cursor-default">🔒 Private & safe by design</div>
+            </div>
+        </div>
+    </section>
 
   <!-- HOW CHURCHES ARE USING IT -->
   <section id="how-used" class="py-20 bg-gray-50">
